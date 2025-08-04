@@ -1,4 +1,4 @@
-# @ag/react-toast
+# ag-react-toast
 
 A beautiful, customizable, and lightweight toast notification library for React with stunning visual effects and comprehensive features.
 
@@ -25,15 +25,15 @@ A beautiful, customizable, and lightweight toast notification library for React 
 ## 📦 Installation
 
 ```bash
-npm install @ag/react-toast
+npm install ag-react-toast
 ```
 
 ```bash
-yarn add @ag/react-toast
+yarn add ag-react-toast
 ```
 
 ```bash
-pnpm add @ag/react-toast
+pnpm add ag-react-toast
 ```
 
 ## 🚀 Quick Start
@@ -42,8 +42,8 @@ pnpm add @ag/react-toast
 
 ```tsx
 import React from 'react';
-import { ToastProvider } from '@ag/react-toast';
-import '@ag/react-toast/dist/index.css'; // Import styles
+import { ToastProvider } from 'ag-react-toast';
+import 'ag-react-toast/dist/index.css'; // Import styles
 import App from './App';
 
 function Root() {
@@ -61,7 +61,7 @@ export default Root;
 
 ```tsx
 import React from 'react';
-import { toast } from '@ag/react-toast';
+import { toast } from 'ag-react-toast';
 
 function MyComponent() {
   const showToast = () => {
@@ -310,7 +310,7 @@ await toast.promise(promise, {
 ### useToast Hook
 
 ```tsx
-import { useToast } from '@ag/react-toast';
+import { useToast } from 'ag-react-toast';
 
 function MyComponent() {
   const { addToast, removeToast, clearAll, toasts } = useToast();
@@ -422,7 +422,7 @@ import type {
   ToastOptions, 
   ToastPosition,
   ToastContextValue
-} from '@ag/react-toast';
+} from 'ag-react-toast';
 
 const options: ToastOptions = {
   variant: 'success',

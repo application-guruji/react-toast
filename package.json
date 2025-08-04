@@ -1,5 +1,5 @@
 {
-  "name": "@ag/react-toast",
+  "name": "ag-react-toast",
   "version": "1.0.0",
   "description": "A beautiful, customizable, and lightweight toast notification library for React",
   "main": "dist/index.js",
