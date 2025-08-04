@@ -1,0 +1,60 @@
+{
+  "name": "@ag/react-toast",
+  "version": "1.0.0",
+  "description": "A beautiful, customizable, and lightweight toast notification library for React",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "react-toast",
+    "react-toastify",
+    "toast",
+    "notification",
+    "alert",
+    "message",
+    "popup",
+    "ui",
+    "component",
+    "typescript"
+  ],
+  "author": "Application GuruJi (https://github.com/application-guruji)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/application-guruji/react-toast.git"
+  },
+  "bugs": {
+    "url": "https://github.com/application-guruji/react-toast/issues"
+  },
+  "homepage": "https://github.com/application-guruji/react-toast#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "rollup": "^3.29.5",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^5.9.2"
+  }
+}
