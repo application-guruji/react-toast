@@ -30,7 +30,7 @@ export const toast = {
     });
   },
 
-  // Error/Danger toast
+  // Error toast
   error: (message: string, options?: Omit<ToastOptions, 'variant'>) => {
     if (!globalAddToast) {
       console.warn('Toast provider not found. Make sure to wrap your app with ToastProvider.');
@@ -38,7 +38,7 @@ export const toast = {
     }
     return globalAddToast(message, {
       ...options,
-      variant: 'danger'
+      variant: 'error'
     });
   },
 
@@ -120,7 +120,7 @@ export const toast = {
       
       globalAddToast(errorMessage, {
         ...options,
-        variant: 'danger'
+        variant: 'error'
       });
       
       throw error;

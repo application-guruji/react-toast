@@ -1,7 +1,7 @@
 {
   "name": "ag-react-toast",
-  "version": "1.0.0",
-  "description": "A beautiful, customizable, and lightweight toast notification library for React",
+  "version": "1.0.1",
+  "description": "A beautiful, lightweight, and easy-to-use toast notification library for React with simple API and modern design",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

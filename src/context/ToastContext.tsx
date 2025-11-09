@@ -19,20 +19,14 @@ export function ToastProvider({
     const newToast: ToastData = {
       id,
       variant: options.variant || 'default',
-      styleVariant: options.styleVariant || 'filled',
-      size: options.size || 'md',
       title: options.title,
       message,
       duration: options.duration !== undefined ? options.duration : 5000,
       dismissible: options.dismissible !== undefined ? options.dismissible : true,
       showIcon: options.showIcon !== undefined ? options.showIcon : true,
       icon: options.icon,
-      border: options.border || 'none',
-      shadow: options.shadow || 'md',
       position: options.position || defaultPosition,
-      transparent: options.transparent || false,
       showProgressBar: options.showProgressBar !== undefined ? options.showProgressBar : true,
-      customColor: options.customColor,
       createdAt: Date.now()
     };
 

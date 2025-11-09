@@ -1,26 +1,23 @@
-# ag-react-toast
+# AG React Toast v1.0.1
 
-A beautiful, customizable, and lightweight toast notification library for React with stunning visual effects and comprehensive features.
+🎉 A beautiful, lightweight, and easy-to-use toast notification library for React. Simple API, modern design, and zero dependencies.
 
 ![Demo](./assets/demo.gif)
 
 ## ✨ Features
 
-- 🎨 **5 Toast Variants**: Default, Success, Warning, Danger, Info
-- 🎭 **9 Style Variants**: Filled, Outline, Soft, Minimal, Gradient, Glow, Glass, Dark, Light
-- 📏 **3 Sizes**: Small (sm), Medium (md), Large (lg)
-- 🔲 **5 Border Options**: None, Left, Top, Bottom, All
-- ✨ **5 Shadow Effects**: None, Small, Medium, Large, Extra Large
+- 🎨 **5 Toast Types**: Default, Success, Error, Warning, Info
 - 🎯 **6 Positioning Options**: All corners and centers
+- 🎨 **Beautiful Colors**: Light, vibrant backgrounds that work everywhere
 - ⚡ **Zero Dependencies**: Only React as peer dependency
-- 📱 **Mobile Responsive**: Optimized for all screen sizes
-- ♿ **Accessible**: ARIA labels and keyboard navigation
-- 🌙 **Dark Mode**: Enhanced dark mode support
-- 🎬 **Smooth Animations**: CSS-based animations
+- 📱 **Mobile Responsive**: Optimized for all screen sizes (320px width)
+- ♿ **Accessible**: ARIA roles and keyboard navigation
+- 🎬 **Smooth Animations**: Subtle CSS transitions
 - 📦 **TypeScript**: Full TypeScript support
-- 🔧 **Progress Bar**: Optional progress indicator
-- 🎨 **Custom Colors**: Support for custom color schemes
+- 🔧 **Progress Bar**: Visual auto-dismiss indicator
 - 🔄 **Promise Support**: Built-in promise handling
+- 🪶 **Lightweight**: ~12KB minified
+- 🎯 **Simple API**: Easy to use, hard to mess up
 
 ## 📦 Installation
 
@@ -125,20 +122,14 @@ toast.clearAll()
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `variant` | `'default' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'default'` | Toast variant |
-| `styleVariant` | `'filled' \| 'outline' \| 'soft' \| 'minimal' \| 'gradient' \| 'glow' \| 'glass' \| 'dark' \| 'light'` | `'filled'` | Visual style |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Toast size |
+| `variant` | `'default' \| 'success' \| 'error' \| 'warning' \| 'info'` | `'default'` | Toast type |
 | `title` | `string` | - | Optional title |
-| `duration` | `number` | `5000` | Auto-dismiss time (0 = persistent) |
+| `duration` | `number` | `5000` | Auto-dismiss time in ms (0 = persistent) |
 | `dismissible` | `boolean` | `true` | Show close button |
-| `showIcon` | `boolean` | `true` | Show variant icon |
-| `icon` | `ReactNode` | - | Custom icon |
-| `border` | `'none' \| 'left' \| 'top' \| 'bottom' \| 'all'` | `'none'` | Border style |
-| `shadow` | `'none' \| 'sm' \| 'md' \| 'lg' \| 'xl'` | `'md'` | Shadow effect |
+| `showIcon` | `boolean` | `true` | Show icon |
+| `icon` | `ReactNode` | - | Custom icon component |
 | `position` | `ToastPosition` | - | Override default position |
-| `transparent` | `boolean` | `false` | Transparent background |
-| `showProgressBar` | `boolean` | `true` | Show progress indicator |
-| `customColor` | `string` | - | Custom background color |
+| `showProgressBar` | `boolean` | `true` | Show progress bar |
 
 ### Position Types
 
@@ -152,11 +143,11 @@ type ToastPosition =
   | 'bottom-center';
 ```
 
-## 🎨 Toast Variants
+## 🎨 Toast Types
 
 ```tsx
 // Success toast
-toast.success('Operation completed!', {
+toast.success('Operation completed successfully!', {
   title: 'Success'
 });
 
@@ -176,62 +167,9 @@ toast.info('New update available!', {
 });
 
 // Default toast
-toast.show('Default message', {
-  title: 'Default'
+toast.show('This is a notification', {
+  title: 'Notification'
 });
-```
-
-## 🎭 Style Variants
-
-```tsx
-// Filled (default)
-toast.success('Filled style', { styleVariant: 'filled' });
-
-// Gradient
-toast.success('Gradient style', { styleVariant: 'gradient' });
-
-// Glow
-toast.info('Glow style', { styleVariant: 'glow' });
-
-// Glass
-toast.success('Glass style', { styleVariant: 'glass' });
-
-// Dark
-toast.info('Dark style', { styleVariant: 'dark' });
-
-// Light
-toast.success('Light style', { styleVariant: 'light' });
-
-// Soft
-toast.warning('Soft style', { styleVariant: 'soft' });
-
-// Minimal
-toast.error('Minimal style', { styleVariant: 'minimal' });
-
-
-// Outline
-toast.info('Outline style', { styleVariant: 'outline' });
-```
-
-## 📏 Sizes and Styling
-
-```tsx
-// Different sizes
-toast.info('Small toast', { size: 'sm' });
-toast.info('Medium toast', { size: 'md' }); // default
-toast.info('Large toast', { size: 'lg' });
-
-// Border styles
-toast.success('Left border', { border: 'left' });
-toast.warning('Top border', { border: 'top' });
-toast.error('Bottom border', { border: 'bottom' });
-toast.info('All borders', { border: 'all' });
-
-// Shadow effects
-toast.success('Small shadow', { shadow: 'sm' });
-toast.info('Medium shadow', { shadow: 'md' });
-toast.warning('Large shadow', { shadow: 'lg' });
-toast.error('Extra large shadow', { shadow: 'xl' });
 ```
 
 ## 📍 Positioning
@@ -246,21 +184,9 @@ toast.success('Bottom left', { position: 'bottom-left' });
 toast.info('Bottom center', { position: 'bottom-center' });
 ```
 
-## 🎨 Custom Styling
+## 🎨 Customization
 
 ```tsx
-// Custom colors
-toast.success('Custom color toast', {
-  customColor: '#8B5CF6',
-  title: 'Purple Toast'
-});
-
-// Transparent background
-toast.info('Transparent toast', {
-  transparent: true,
-  title: 'See-through'
-});
-
 // Custom icon
 toast.success('Custom icon', {
   icon: <YourCustomIcon />,
@@ -268,16 +194,20 @@ toast.success('Custom icon', {
 });
 
 // Persistent toast (no auto-dismiss)
-toast.warning('Persistent toast', {
+toast.warning('This toast stays until manually closed', {
   duration: 0,
-  dismissible: true,
-  title: 'Stays Forever'
+  title: 'Persistent'
 });
 
 // No progress bar
-toast.info('No progress bar', {
-  showProgressBar: false,
-  title: 'Clean Look'
+toast.info('Clean look without progress bar', {
+  showProgressBar: false
+});
+
+// Long duration
+toast.success('This stays for 10 seconds', {
+  duration: 10000,
+  title: 'Extended Duration'
 });
 ```
 
@@ -300,86 +230,61 @@ await toast.promise(promise, {
   success: (data) => `Loaded ${data.length} items`,
   error: (err) => `Error: ${err.message}`
 }, {
-  styleVariant: 'gradient',
-  position: 'top-center'
+  position: 'top-center',
+  duration: 3000
 });
 ```
 
-## 🎣 React Hooks
-
-### useToast Hook
+## 🧹 Clearing Toasts
 
 ```tsx
-import { useToast } from 'ag-react-toast';
+// Clear all toasts at once
+toast.clearAll();
 
+// Example: Clear toasts on navigation
 function MyComponent() {
-  const { addToast, removeToast, clearAll, toasts } = useToast();
-  
-  const handleAddToast = () => {
-    const id = addToast('Custom toast message', {
-      variant: 'success',
-      styleVariant: 'glow',
-      title: 'Custom Toast'
-    });
-    
-    // Remove after 3 seconds
-    setTimeout(() => removeToast(id), 3000);
+  const handleNavigate = () => {
+    toast.clearAll();
+    // Navigate to another page
   };
   
-  return (
-    <div>
-      <button onClick={handleAddToast}>Add Toast</button>
-      <button onClick={clearAll}>Clear All ({toasts.length})</button>
-    </div>
-  );
+  return <button onClick={handleNavigate}>Go to Page</button>;
 }
 ```
 
 ## ⚙️ Advanced Examples
 
 ```tsx
-// Complex toast with all features
-toast.success('Complex notification with all features enabled', {
-  title: 'Advanced Toast',
-  styleVariant: 'gradient',
-  size: 'lg',
-  border: 'left',
-  shadow: 'xl',
-  position: 'top-center',
+// Toast with custom icon and long duration
+toast.success('Your file has been uploaded successfully!', {
+  title: 'Upload Complete',
+  icon: <UploadIcon />,
   duration: 8000,
-  dismissible: true,
-  showIcon: true,
-  showProgressBar: true
+  position: 'top-center'
 });
 
-// Glow effect with custom styling
-toast.info('Stunning glow effect with enhanced visuals', {
-  title: 'Glow Effect',
-  styleVariant: 'glow',
-  shadow: 'lg',
-  border: 'all',
-  customColor: '#3B82F6'
-});
+// Multiple toasts with different positions
+toast.info('Processing...', { position: 'bottom-left' });
+toast.success('Done!', { position: 'top-right' });
 
-// Glass morphism effect
-toast.warning('Glass morphism design', {
-  title: 'Modern Glass',
-  styleVariant: 'glass',
-  transparent: true,
-  shadow: 'md'
+// Toast without icon
+toast.warning('Please review your changes', {
+  title: 'Attention',
+  showIcon: false
 });
 ```
 
-## 🌙 Dark Mode
+## 🎨 Color Scheme
 
-The library automatically supports dark mode when your app has a `.dark` class on a parent element:
+The library uses a beautiful, universal color scheme that works perfectly in both light and dark backgrounds:
 
-```css
-/* Dark mode is automatically applied */
-.dark .toast {
-  /* Enhanced dark mode styles */
-}
-```
+- **Success**: Light green background (`#e8f5e9`) with dark green text
+- **Error**: Light red background (`#ffebee`) with dark red text
+- **Warning**: Light orange background (`#fff3e0`) with dark orange text
+- **Info**: Light blue background (`#e3f2fd`) with dark blue text
+- **Default**: Light gray background (`#f5f5f5`) with dark gray text
+
+These colors provide excellent contrast and readability whether your app has a light or dark background!
 
 ## ♿ Accessibility
 
@@ -391,10 +296,11 @@ The library automatically supports dark mode when your app has a `.dark` class o
 
 ## 📱 Mobile & Responsive
 
-- **Responsive Design**: Adapts to all screen sizes
-- **Touch-Friendly**: Optimized touch targets
-- **Mobile Positioning**: Smart positioning for mobile devices
-- **Viewport Awareness**: Automatically adjusts to constraints
+- **Fixed Width**: 320px on desktop for consistency
+- **Responsive**: Full width with margins on mobile (<640px)
+- **Touch-Friendly**: 44px minimum touch targets
+- **Smart Positioning**: Automatically centers on small screens
+- **Safe Areas**: Respects device notches and safe areas
 
 ## 🎯 Browser Support
 
@@ -407,10 +313,11 @@ The library automatically supports dark mode when your app has a `.dark` class o
 ## ⚡ Performance
 
 - **Zero Dependencies**: Only React as peer dependency
-- **Small Bundle Size**: Lightweight and optimized
+- **Small Bundle**: ~12KB minified, ~4KB gzipped
 - **CSS-Only Animations**: No JavaScript animations
 - **Tree Shakeable**: Import only what you need
 - **SSR Compatible**: Works with Next.js, Gatsby, etc.
+- **60 FPS**: Smooth animations with requestAnimationFrame
 
 ## 🔧 TypeScript Support
 
@@ -421,17 +328,17 @@ import type {
   ToastData,
   ToastOptions, 
   ToastPosition,
-  ToastContextValue
+  ToastVariant
 } from 'ag-react-toast';
 
 const options: ToastOptions = {
   variant: 'success',
-  styleVariant: 'gradient',
-  size: 'lg',
-  border: 'left',
-  shadow: 'xl',
-  position: 'top-center',
-  dismissible: true
+  title: 'Success',
+  duration: 5000,
+  position: 'top-right',
+  dismissible: true,
+  showIcon: true,
+  showProgressBar: true
 };
 ```
 

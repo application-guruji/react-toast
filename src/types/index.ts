@@ -1,21 +1,15 @@
-// Toast Types - Enhanced with new features
+// Toast Types - Simplified and Clean
 export interface ToastData {
   id: string;
-  variant: 'default' | 'success' | 'warning' | 'danger' | 'info';
-  styleVariant: 'filled' | 'outline' | 'soft' | 'minimal' | 'gradient' | 'glow' | 'glass' | 'light' | 'dark';
-  size: 'sm' | 'md' | 'lg';
+  variant: 'default' | 'success' | 'error' | 'warning' | 'info';
   title?: string;
   message: string;
   duration?: number;
   dismissible?: boolean;
   showIcon?: boolean;
   icon?: React.ReactNode;
-  border?: 'none' | 'left' | 'top' | 'bottom' | 'all';
-  shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
   position?: ToastPosition;
-  transparent?: boolean;
   showProgressBar?: boolean;
-  customColor?: string;
   createdAt: number;
 }
 
@@ -29,19 +23,13 @@ export type ToastPosition =
 
 export interface ToastOptions {
   variant?: ToastData['variant'];
-  styleVariant?: ToastData['styleVariant'];
-  size?: ToastData['size'];
   title?: string;
   duration?: number;
   dismissible?: boolean;
   showIcon?: boolean;
   icon?: React.ReactNode;
-  border?: ToastData['border'];
-  shadow?: ToastData['shadow'];
   position?: ToastPosition;
-  transparent?: boolean;
   showProgressBar?: boolean;
-  customColor?: string;
 }
 
 export interface ToastContextValue {
